@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StepPact — Walk every day. Keep your pact.</title>
+  <meta name="description" content="StepPact is a step challenge app. Join a challenge, hit your daily step goal, and split the pool with everyone who finished.">
+  <meta property="og:title" content="StepPact — Walk every day. Keep your pact.">
+  <meta property="og:description" content="Join a step challenge, hit your goal every day, split the pool with everyone who finished. Coming soon to iOS.">
+  <meta name="theme-color" content="#0A0B0D">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0B0D'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23FF6B1A' stroke-width='3'/%3E%3Cpath d='M11 16.5l3.5 3.5 6.5-7' fill='none' stroke='%23C8F135' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="StepPact home">
+        <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="12" fill="none" stroke="#FF6B1A" stroke-width="3"/>
+          <path d="M10.5 16.5l4 4 7-8" fill="none" stroke="#C8F135" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Step<span>Pact</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#rules">Rules</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="support.html">Support</a>
+      </nav>
+      <a href="#get" class="btn btn-primary btn-sm">Coming to iOS</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO: the whole idea on one screen ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow reveal">The step challenge app</span>
+          <h1 class="reveal" style="--d:.08s">Walk every day.<br><span class="hl">Keep your pact.</span></h1>
+          <p class="lead reveal" style="--d:.16s">Join a step challenge with a small entry fee. <b>Hit your daily step goal</b> for the whole challenge, and <b>split the pool</b> with everyone who finished.</p>
+
+          <div class="pact-line reveal" style="--d:.24s" aria-label="How StepPact works in three moves">
+            <span class="pact-chip"><i>1</i>Join</span>
+            <span class="pact-arrow">→</span>
+            <span class="pact-chip"><i>2</i>Walk daily</span>
+            <span class="pact-arrow">→</span>
+            <span class="pact-chip win"><i>✓</i>Finish &amp; split</span>
+          </div>
+
+          <div class="hero-cta reveal" style="--d:.32s">
+            <a href="#get" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.17-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.3-3.52zM14.2 6.12c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>
+              Coming soon
+            </a>
+            <a href="#how" class="btn btn-ghost">See how it works</a>
+          </div>
+          <p class="small reveal" style="--d:.4s">18+ only. Paid challenges are available in eligible US states only.</p>
+        </div>
+
+        <div class="hero-visual reveal" style="--d:.2s" aria-hidden="true">
+          <!-- MASCOT SLOT: put a transparent PNG at assets/mascot.png and it appears here.
+               If the file doesn't exist, this block removes itself. -->
+          <div class="mascot mascot-hero" data-speed="-0.06">
+            <img src="assets/mascot.png" alt="" onerror="this.parentElement.remove()">
+          </div>
+
+          <div class="phone" data-speed="0.04">
+            <div class="screen">
+              <div>
+                <div class="screen-label">Active challenge</div>
+                <div class="screen-title">10K a day · 14 days</div>
+              </div>
+              <div class="ring-wrap">
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="#191C22" stroke-width="10"/>
+                  <circle class="ring-bar" cx="60" cy="60" r="52" fill="none" stroke="#C8F135" stroke-width="10" stroke-linecap="round"/>
+                </svg>
+                <div class="ring-center">
+                  <strong>8,412</strong>
+                  <span>of 10,000 steps</span>
+                </div>
+              </div>
+              <div class="days">
+                <div class="day done"></div><div class="day done"></div><div class="day done"></div><div class="day rest"></div><div class="day done"></div><div class="day done"></div><div class="day done"></div>
+                <div class="day done"></div><div class="day today"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+              </div>
+              <div class="mini-stats">
+                <div class="mini-stat"><b>Day 9</b><small>of 14</small></div>
+                <div class="mini-stat"><b>1 / 1</b><small>Rest day used</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Show up</span><span>Walk</span><span>Keep your word</span><span>Every day</span><span>Finish together</span><span>No excuses</span>
+        <span>Show up</span><span>Walk</span><span>Keep your word</span><span>Every day</span><span>Finish together</span><span>No excuses</span>
+      </div>
+    </div>
+
+    <!-- ===== BIG NUMBERS ===== -->
+    <section style="padding-bottom:0">
+      <div class="container numbers">
+        <div class="num reveal"><b data-count="100" data-suffix="%">100%</b><span>of entry fees go to the people who finish</span></div>
+        <div class="num reveal" style="--d:.08s"><b>1 day</b><span>you can miss and still finish</span></div>
+        <div class="num reveal" style="--d:.16s"><b>0</b><span>steps typed by hand. Your iPhone counts them</span></div>
+        <div class="num reveal" style="--d:.24s"><b>0 ads</b><span>no ads and no tracking, ever</span></div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">How it works</span>
+            <h2>Four steps.<br>Every day.</h2>
+          </div>
+          <p class="reveal" style="--d:.1s">Motivation fades. A commitment doesn't. StepPact gives your daily walk a deadline, a group, and something on the line.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-num">01</div>
+            <h3>Pick a challenge</h3>
+            <p>Every challenge has a daily step target and a set number of days. Join a public one or start a private challenge with friends.</p>
+          </div>
+          <div class="step reveal" style="--d:.08s">
+            <div class="step-num">02</div>
+            <h3>Commit</h3>
+            <p>Pay the entry fee before the start. You see the full cost, including the service fee, before you confirm. Free challenges exist too.</p>
+          </div>
+          <div class="step reveal" style="--d:.16s">
+            <div class="step-num">03</div>
+            <h3>Walk</h3>
+            <p>Your steps are read automatically from your iPhone. Steps typed in by hand don't count, so every result is real.</p>
+          </div>
+          <div class="step reveal" style="--d:.24s">
+            <div class="step-num">04</div>
+            <h3>Finish</h3>
+            <p>Hit the target every day. You can miss one day and still finish. The pool is split equally among everyone who finished.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RULES ===== -->
+    <section id="rules" class="alt">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Rules in plain English</span>
+            <h2>No fine print.<br><span class="hl">No surprises.</span></h2>
+          </div>
+          <p class="reveal" style="--d:.1s">Every entry fee goes into the pool. A separate service fee is shown on top, before you pay.</p>
+        </div>
+
+        <div class="rules-grid">
+          <div class="receipt reveal">
+            <div class="receipt-head">Example · $20 challenge, paid by card</div>
+            <div class="receipt-row">
+              <span>Entry fee<small>100% goes to the pool</small></span>
+              <b>$20.00</b>
+            </div>
+            <div class="receipt-row">
+              <span>Service fee<small>5% + $0.50 by card · 5% from balance</small></span>
+              <b>$1.50</b>
+            </div>
+            <div class="receipt-row total">
+              <span>Total</span>
+              <b>$21.50</b>
+            </div>
+            <div class="receipt-note">If nobody finishes, every entry fee is returned.</div>
+          </div>
+
+          <div class="reveal" style="--d:.1s">
+            <ul class="rule-list">
+              <li><b>Entry fees</b><span>From $10 to $500 for paid challenges. Free challenges cost nothing.</span></li>
+              <li><b>Finishing</b><span>Reach the daily target on every day of the challenge. One missed day is allowed.</span></li>
+              <li><b>Payouts</b><span>The pool is split equally among finishers and credited to your StepPact balance.</span></li>
+              <li><b>Leaving early</b><span>Before the start: entry fee back to your balance. After the start: the entry fee is not refunded.</span></li>
+              <li><b>Cancellations</b><span>If a challenge is cancelled by StepPact, you get a full refund, including the service fee.</span></li>
+              <li><b>Limits</b><span>Up to 5 paid challenges at a time.</span></li>
+            </ul>
+            <div class="warning">You can lose your entry fee if you don't finish. Only join with an amount you're comfortable losing. StepPact is about building a habit, not making money.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Built for consistency</span>
+            <h2>Everything you need.<br>Nothing you don't.</h2>
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature reveal">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Private challenges</h3>
+            <p>Start a challenge just for friends, family, or your team, and keep each other honest.</p>
+          </div>
+          <div class="feature reveal" style="--d:.08s">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3>Public challenges</h3>
+            <p>Join open challenges with walkers across the country. Creating one is free.</p>
+          </div>
+          <div class="feature reveal" style="--d:.16s">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Fair play</h3>
+            <p>Steps come from your phone's sensors. Manual entries are rejected and suspicious activity is reviewed.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <h3>Live progress</h3>
+            <p>See your day, your streak, and how the group is doing at a glance.</p>
+          </div>
+          <div class="feature reveal" style="--d:.08s">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <h3>Private by default</h3>
+            <p>No ads and no tracking. Your health data is only used to count your steps.</p>
+          </div>
+          <div class="feature reveal" style="--d:.16s">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg></div>
+            <h3>Three languages</h3>
+            <p>Available in English, Spanish, and Russian.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="alt">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2>Questions,<br>answered.</h2>
+          </div>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>How are my steps counted?</summary>
+            <p>StepPact reads your steps automatically from your iPhone. You don't need to log anything. Steps entered by hand are not counted.</p>
+          </details>
+          <details>
+            <summary>What if I miss a day?</summary>
+            <p>Every challenge allows one missed day. Miss two or more and you won't finish that challenge.</p>
+          </details>
+          <details>
+            <summary>How is the pool split?</summary>
+            <p>All entry fees go into the pool. When the challenge ends, the pool is divided equally among everyone who finished. If nobody finishes, all entry fees are returned.</p>
+          </details>
+          <details>
+            <summary>Is StepPact available in my state?</summary>
+            <p>Free challenges are available across the US. Paid challenges are only available in eligible states, and the app checks your location before you join one.</p>
+          </details>
+          <details>
+            <summary>Who can use StepPact?</summary>
+            <p>You must be 18 or older to use StepPact.</p>
+          </details>
+          <details>
+            <summary>Can I delete my account?</summary>
+            <p>Yes. Go to Profile and request account deletion. Your balance is paid out first, then your personal data is deleted. <a href="support.html" style="color:var(--accent)">Learn more</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section id="get">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2>Your steps.<br>Your word.</h2>
+          <a href="support.html" class="btn">Coming soon to the App Store</a>
+          <!-- MASCOT SLOT #2: same file, appears in the orange block -->
+          <div class="mascot mascot-cta">
+            <img src="assets/mascot.png" alt="" onerror="this.parentElement.remove()">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="logo">Step<span>Pact</span></a>
+        <div class="footer-links">
+          <a href="#how">How it works</a>
+          <a href="#rules">Rules</a>
+          <a href="support.html">Support</a>
+          <a href="https://maxfarel.github.io/steppact-legal/privacy.html">Privacy Policy</a>
+          <a href="https://maxfarel.github.io/steppact-legal/terms.html">Terms of Service</a>
+        </div>
+      </div>
+      <p class="legal">
+        © 2026 StepPact. All rights reserved.<br>
+        Must be 18+ to participate. Paid challenges are not available in all states; void where prohibited. Entry fees may be lost if a challenge is not completed.
+        Apple is not a sponsor of, and is not involved in, StepPact challenges. Apple, iPhone and App Store are trademarks of Apple Inc.
+        StepPact is not a medical device and does not provide medical advice.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
